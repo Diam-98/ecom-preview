@@ -1,0 +1,20 @@
+.hidden {
+  display: none;
+}
+
+.search-menu {
+  transition: max-height 0.3s ease-in-out;
+  overflow: hidden;
+  display: none;
+  max-height: 150px;
+}
+
+.search-menu.show {
+  max-height: 150px;
+  /* color: #00000036; */
+}
+
+.carousel {
+  /* transition: transform 0.5s ease-in-out;
+  transition-property: all; */
+}

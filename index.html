@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css"
+      integrity="sha512-UuQ/zJlbMVAw/UU8vVBhnI4op+/tFOpQZVT+FormmIEhRSCnJWyHiBbEVgM4Uztsht41f3FzVWgLuwzUqOObKw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              firstColor: '#efefef',
+            },
+          },
+        },
+      }
+    </script>
+    <title>O - ECM</title>
+  </head>
+  <body>
+    <header>
+      <!--TOP PART-->
+      <marquee class="bg-firstColor p-2">
+        <div class="flex items-center justify-between">
+          <a href="/" class="text-black text-xs"
+            >Propmotion -30% de reduction.</a
+          >
+          <a href="/" class="text-black text-xs"
+            >Livraison gratuit a partir de 5000 F</a
+          >
+          <a href="/" class="text-black text-xs"
+            >Propmotion -30% de reduction.</a
+          >
+          <a href="/" class="text-black text-xs"
+            >Livraison gratuit a partir de 5000 F</a
+          >
+          <a href="/" class="text-black text-xs"
+            >Propmotion -30% de reduction.</a
+          >
+          <a href="/" class="text-black text-xs"
+            >Livraison gratuit a partir de 5000 F</a
+          >
+        </div>
+      </marquee>
+
+      <!-- BOTTOM PART -->
+      <div class="flex items-center justify-between px-7 py-3 shadow-md">
+        <!-- LEFT PART : menu -->
+        <ul class="hidden md:flex items-center gap-4">
+          <li><a href="/">Boutique</a></li>
+          <li><a href="/">A Propos</a></li>
+          <li><a href="/">Contact</a></li>
+        </ul>
+        <!-- MIDDLE PART -->
+        <div class="flex items-center justify-between gap-5">
+          <button id="menu-button" class="md:hidden">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+          </button>
+          <h1 class="font-bold text-lg">ClothsShop</h1>
+        </div>
+        <!-- RIGHT PART -->
+        <div class="flex items-center gap-4">
+          <form
+            class="ring-1 ring-[#e1e1e1] px-3 py-1 rounded-2xl hidden md:block"
+          >
+            <input
+              type="search"
+              placeholder="Rechercher un produit"
+              class="outline-none"
+            />
+            <button><i class="fa fa-search" aria-hidden="true"></i></button>
+          </form>
+          <!-- BUTTON SEARCH -->
+          <button id="search-button" class="md:hidden">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+          <button id="user-button">
+            <i class="fa fa-user-circle" aria-hidden="true"></i>
+          </button>
+          <div class="relative">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <span
+              class="h-4 w-4 bg-red-500 text-white flex items-center justify-center rounded-full absolute -top-1 -right-2 text-xs"
+              >3</span
+            >
+          </div>
+        </div>
+      </div>
+      <!-- MOBILE SEARCH -->
+      <div
+        id="mobile-search"
+        class="absolute w-full flex items-center justify-center p-5 bg-white shadow-md hidden md:hidden search-menu z-100"
+      >
+        <form class="ring-1 ring-[#e1e1e1] w-full px-3 py-1 rounded-lg">
+          <input
+            type="search"
+            placeholder="Rechercher un produit"
+            class="outline-none w-[92%]"
+          />
+          <button><i class="fa fa-search" aria-hidden="true"></i></button>
+        </form>
+      </div>
+    </header>
+    <!-- MENU MODAL -->
+    <div
+      id="menu-drawer-id"
+      class="absolute top-0 pt-[93.6px] bottom-0 w-full h-screen overflow-hidden hidden md:hidden menu-drawer z-100"
+    >
+      <div class="left-0 w-[250px] h-[calc(100vh-93.6px)] bg-white border">
+        <ul class="mt-10 flex flex-col gap-8 w-full">
+          <li class="w-full hover:bg-firstColor px-8 py-1">
+            <a href="/">Boutique</a>
+          </li>
+          <li class="w-full hover:bg-firstColor px-8 py-1">
+            <a href="/">A Propos</a>
+          </li>
+          <li class="w-full hover:bg-firstColor px-8 py-1">
+            <a href="/">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!--HERO SECTION-->
+    <div
+      class="absolute w-full h-screen overflow-hidden top-0 pt-[93.6px] -z-10"
+    >
+      <div
+        id="carousel"
+        class="h-full w-max flex transition-all ease-in-out duration-100 carousel -z-10"
+      >
+        <div
+          class="w-screen h-full flex items-center justify-around py-8 relative -z-90"
+        >
+          <img src="/cstm-1.jpg" alt="" class="absolute left-0 -z-10 h-full" />
+          <div
+            class="flex flex-col items-center justify-center bg-[#00000046] text-white p-4 -z-90"
+          >
+            <h3 class="font-semibold text-lg">
+              De nouveaux Costumes pour Homme
+            </h3>
+            <p>Profiter pour une promotion de -30%</p>
+            <button
+              class="px-24 py-3 my-5 text-black bg-white hover:bg-black hover:text-white"
+            >
+              Voir
+            </button>
+          </div>
+          <img
+            src="https://keyfaworld.com/web/image/product.image/140/image?unique=4ab945a"
+            alt=""
+            class="absolute right-0 -z-20 h-full max-md:hidden max-lg:-right-24"
+          />
+        </div>
+
+        <div
+          class="w-screen h-full flex items-center justify-around py-8 relative z-90"
+        >
+          <img
+            src="https://m.media-amazon.com/images/I/617Pf1ZGFtL.jpg"
+            alt=""
+            class="absolute left-0 -z-10 h-full"
+          />
+          <div
+            class="flex flex-col items-center justify-center bg-[#00000046] text-white p-4 -z-90"
+          >
+            <h3 class="font-semibold text-lg">
+              De nouveaux Costumes pour Homme
+            </h3>
+            <p>Profiter pour une promotion de -30%</p>
+            <button
+              class="px-24 py-3 my-5 text-black bg-white hover:bg-black hover:text-white"
+            >
+              Voir
+            </button>
+          </div>
+          <img
+            src="https://sc04.alicdn.com/kf/Hb0e1c2270d73448581cd31be761edbd6U.jpg"
+            alt=""
+            class="absolute right-0 -z-20 h-full max-md:hidden max-lg:-right-24"
+          />
+        </div>
+
+        <div
+          class="w-screen h-full flex items-center justify-around py-8 relative"
+        >
+          <img
+            src="https://cdn.shopify.com/s/files/1/0527/3721/2585/products/costume-boubou-africain.jpg?v=1630230481"
+            alt=""
+            class="absolute left-0 -z-10 h-full"
+          />
+          <div
+            class="flex flex-col items-center justify-center bg-[#00000046] text-white p-4 -z-90"
+          >
+            <h3 class="font-semibold text-lg">
+              De nouveaux Costumes pour Homme
+            </h3>
+            <p>Profiter pour une promotion de -30%</p>
+            <button
+              class="px-24 py-3 my-5 text-black bg-white hover:bg-black hover:text-white"
+            >
+              Voir
+            </button>
+          </div>
+          <img
+            src="https://boutique-africaine.com/cdn/shop/products/boubou-africain-costume_1200x1200.jpg?v=1630230491"
+            alt=""
+            class="absolute right-0 -z-20 h-full max-md:hidden max-lg:-right-24"
+          />
+        </div>
+      </div>
+      <div class="flex items-center gap-5 absolute bottom-10 right-10">
+        <button
+          id="prev-button"
+          class="h-8 w-8 flex items-center justify-center bg-firstColor border rounded-full"
+        >
+          <i class="fa fa-angle-left" aria-hidden="true"></i>
+        </button>
+        <button
+          id="next-button"
+          class="h-8 w-8 flex items-center justify-center bg-firstColor border rounded-full"
+        >
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+    <script src="/script.js"></script>
+  </body>
+</html>
