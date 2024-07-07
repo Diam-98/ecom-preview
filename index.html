@@ -116,39 +116,19 @@
         </form>
       </div>
     </header>
-    <!-- MENU MODAL -->
-    <div
-      id="menu-drawer-id"
-      class="absolute top-0 pt-[93.6px] bottom-0 w-full h-screen overflow-hidden hidden md:hidden menu-drawer z-100"
-    >
-      <div class="left-0 w-[250px] h-[calc(100vh-93.6px)] bg-white border">
-        <ul class="mt-10 flex flex-col gap-8 w-full">
-          <li class="w-full hover:bg-firstColor px-8 py-1">
-            <a href="/">Boutique</a>
-          </li>
-          <li class="w-full hover:bg-firstColor px-8 py-1">
-            <a href="/">A Propos</a>
-          </li>
-          <li class="w-full hover:bg-firstColor px-8 py-1">
-            <a href="/">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
+
     <!--HERO SECTION-->
-    <div
-      class="absolute w-full h-screen overflow-hidden top-0 pt-[93.6px] -z-10"
-    >
+    <div class="w-full h-screen overflow-hidden top-0 -z-10">
       <div
         id="carousel"
         class="h-full w-max flex transition-all ease-in-out duration-100 carousel -z-10"
       >
         <div
-          class="w-screen h-full flex items-center justify-around py-8 relative -z-90"
+          class="w-screen h-full flex items-center justify-around py-8 relative -z-10"
         >
           <img src="/cstm-1.jpg" alt="" class="absolute left-0 -z-10 h-full" />
           <div
-            class="flex flex-col items-center justify-center bg-[#00000046] text-white p-4 -z-90"
+            class="flex flex-col items-center justify-center bg-[#00000046] text-white p-4 -z-10"
           >
             <h3 class="font-semibold text-lg">
               De nouveaux Costumes pour Homme
@@ -168,7 +148,7 @@
         </div>
 
         <div
-          class="w-screen h-full flex items-center justify-around py-8 relative z-90"
+          class="w-screen h-full flex items-center justify-around py-8 relative -z-10"
         >
           <img
             src="https://m.media-amazon.com/images/I/617Pf1ZGFtL.jpg"
@@ -176,7 +156,7 @@
             class="absolute left-0 -z-10 h-full"
           />
           <div
-            class="flex flex-col items-center justify-center bg-[#00000046] text-white p-4 -z-90"
+            class="flex flex-col items-center justify-center bg-[#00000046] text-white p-4 -z-10"
           >
             <h3 class="font-semibold text-lg">
               De nouveaux Costumes pour Homme
@@ -196,7 +176,7 @@
         </div>
 
         <div
-          class="w-screen h-full flex items-center justify-around py-8 relative"
+          class="w-screen h-full flex items-center justify-around py-8 relative -z-10"
         >
           <img
             src="https://cdn.shopify.com/s/files/1/0527/3721/2585/products/costume-boubou-africain.jpg?v=1630230481"
@@ -204,7 +184,7 @@
             class="absolute left-0 -z-10 h-full"
           />
           <div
-            class="flex flex-col items-center justify-center bg-[#00000046] text-white p-4 -z-90"
+            class="flex flex-col items-center justify-center bg-[#00000046] text-white p-4 -z-10"
           >
             <h3 class="font-semibold text-lg">
               De nouveaux Costumes pour Homme
@@ -238,6 +218,292 @@
         </button>
       </div>
     </div>
+
+    <!-- MENU MODAL -->
+    <div
+      id="menu-drawer-id"
+      class="absolute top-0 pt-[93.6px] bottom-0 w-full h-screen overflow-hidden hidden md:hidden menu-drawer z-100"
+    >
+      <div
+        class="left-0 w-[250px] h-[calc(100vh-93.6px)] bg-white border z-100"
+      >
+        <ul class="mt-10 flex flex-col gap-8 w-full">
+          <li class="w-full hover:bg-firstColor px-8 py-1">
+            <a href="/">Boutique</a>
+          </li>
+          <li class="w-full hover:bg-firstColor px-8 py-1">
+            <a href="/">A Propos</a>
+          </li>
+          <li class="w-full hover:bg-firstColor px-8 py-1">
+            <a href="/">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!--
+      PRODUCT GRID
+    -->
+    <div class="product-main">
+      <h2 class="text-2xl font-semibold mb-6">New Products</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="border rounded-lg overflow-hidden">
+          <div class="relative">
+            <img
+              src="/cstm-1.jpg"
+              alt="Mens Winter Leathers Jackets"
+              class="w-full h-auto"
+            />
+            <img
+              src="https://boutique-africaine.com/cdn/shop/products/boubou-africain-costume_1200x1200.jpg?v=1630230491"
+              alt="Mens Winter Leathers Jackets"
+              class="w-full h-auto hidden hover:block"
+            />
+
+            <p
+              class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 text-xs font-bold rounded"
+            >
+              15%
+            </p>
+
+            <div
+              class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2"
+            >
+              <button class="btn-action bg-white rounded-full p-2">
+                <ion-icon name="heart-outline"></ion-icon>
+              </button>
+
+              <button class="btn-action bg-white rounded-full p-2">
+                <ion-icon name="eye-outline"></ion-icon>
+              </button>
+
+              <button class="btn-action bg-white rounded-full p-2">
+                <ion-icon name="repeat-outline"></ion-icon>
+              </button>
+
+              <button class="btn-action bg-white rounded-full p-2">
+                <ion-icon name="bag-add-outline"></ion-icon>
+              </button>
+            </div>
+          </div>
+
+          <div class="p-4">
+            <a href="#" class="block text-gray-500 text-sm mb-2">Jacket</a>
+
+            <a href="#">
+              <h3 class="text-lg font-semibold">
+                Mens Winter Leathers Jackets
+              </h3>
+            </a>
+
+            <div class="mt-2">
+              <span class="text-xl font-bold">$48.00</span>
+              <del class="text-gray-500 ml-2">$75.00</del>
+            </div>
+          </div>
+        </div>
+
+        <div class="showcase border rounded-lg overflow-hidden">
+          <div class="relative">
+            <img
+              src="https://boutique-africaine.com/cdn/shop/products/boubou-africain-costume_1200x1200.jpg?v=1630230491"
+              alt="Pure Garment Dyed Cotton Shirt"
+              class="w-full h-auto"
+            />
+            <img
+              src="./assets/images/products/shirt-2.jpg"
+              alt="Pure Garment Dyed Cotton Shirt"
+              class="w-full h-auto hidden group-hover:block"
+            />
+
+            <p
+              class="absolute top-2 left-2 bg-black text-white px-2 py-1 text-xs font-bold rounded"
+            >
+              sale
+            </p>
+
+            <div
+              class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2"
+            >
+              <button class="btn-action bg-white rounded-full p-2">
+                <ion-icon name="heart-outline"></ion-icon>
+              </button>
+
+              <button class="btn-action bg-white rounded-full p-2">
+                <ion-icon name="eye-outline"></ion-icon>
+              </button>
+
+              <button class="btn-action bg-white rounded-full p-2">
+                <ion-icon name="repeat-outline"></ion-icon>
+              </button>
+
+              <button class="btn-action bg-white rounded-full p-2">
+                <ion-icon name="bag-add-outline"></ion-icon>
+              </button>
+            </div>
+          </div>
+
+          <div class="p-4">
+            <a href="#" class="block text-gray-500 text-sm mb-2">Shirt</a>
+
+            <h3>
+              <a href="#" class="text-lg font-semibold"
+                >Pure Garment Dyed Cotton Shirt</a
+              >
+            </h3>
+
+            <div class="flex items-center mt-2">
+              <ion-icon name="star" class="text-yellow-500"></ion-icon>
+              <ion-icon name="star" class="text-yellow-500"></ion-icon>
+              <ion-icon name="star" class="text-yellow-500"></ion-icon>
+              <ion-icon name="star-outline" class="text-yellow-500"></ion-icon>
+              <ion-icon name="star-outline" class="text-yellow-500"></ion-icon>
+            </div>
+
+            <div class="mt-2">
+              <span class="text-xl font-bold">$45.00</span>
+              <del class="text-gray-500 ml-2">$56.00</del>
+            </div>
+          </div>
+        </div>
+
+        <div class="showcase border rounded-lg overflow-hidden">
+          <div class="relative">
+            <img
+              src="https://m.media-amazon.com/images/I/617Pf1ZGFtL.jpg"
+              alt="MEN Yarn Fleece Full-Zip Jacket"
+              class="w-full h-auto"
+            />
+            <img
+              src="./assets/images/products/jacket-6.jpg"
+              alt="MEN Yarn Fleece Full-Zip Jacket"
+              class="w-full h-auto hidden group-hover:block"
+            />
+
+            <div
+              class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2"
+            >
+              <button class="btn-action bg-white rounded-full p-2">
+                <ion-icon name="heart-outline"></ion-icon>
+              </button>
+
+              <button class="btn-action bg-white rounded-full p-2">
+                <ion-icon name="eye-outline"></ion-icon>
+              </button>
+
+              <button class="btn-action bg-white rounded-full p-2">
+                <ion-icon name="repeat-outline"></ion-icon>
+              </button>
+
+              <button class="btn-action bg-white rounded-full p-2">
+                <ion-icon name="bag-add-outline"></ion-icon>
+              </button>
+            </div>
+          </div>
+
+          <div class="p-4">
+            <a href="#" class="block text-gray-500 text-sm mb-2">Jacket</a>
+
+            <h3>
+              <a href="#" class="text-lg font-semibold"
+                >MEN Yarn Fleece Full-Zip Jacket</a
+              >
+            </h3>
+
+            <div class="flex items-center mt-2">
+              <ion-icon name="star" class="text-yellow-500"></ion-icon>
+              <ion-icon name="star" class="text-yellow-500"></ion-icon>
+              <ion-icon name="star" class="text-yellow-500"></ion-icon>
+              <ion-icon name="star-outline" class="text-yellow-500"></ion-icon>
+              <ion-icon name="star-outline" class="text-yellow-500"></ion-icon>
+            </div>
+
+            <div class="mt-2">
+              <span class="text-xl font-bold">$58.00</span>
+              <del class="text-gray-500 ml-2">$65.00</del>
+            </div>
+          </div>
+        </div>
+
+        <div class="showcase border rounded-lg overflow-hidden">
+          <div class="relative">
+            <img
+              src="./assets/images/products/clothes-3.jpg"
+              alt="Black Floral Wrap Midi Skirt"
+              class="w-full h-auto"
+            />
+            <img
+              src="./assets/images/products/clothes-4.jpg"
+              alt="Black Floral Wrap Midi Skirt"
+              class="w-full h-auto hidden group-hover:block"
+            />
+
+            <p
+              class="absolute top-2 left-2 bg-pink-500 text-white px-2 py-1 text-xs font-bold rounded"
+            >
+              new
+            </p>
+
+            <div
+              class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2"
+            >
+              <button class="btn-action bg-white rounded-full p-2">
+                <ion-icon name="heart-outline"></ion-icon>
+              </button>
+
+              <button class="btn-action bg-white rounded-full p-2">
+                <ion-icon name="eye-outline"></ion-icon>
+              </button>
+
+              <button class="btn-action bg-white rounded-full p-2">
+                <ion-icon name="repeat-outline"></ion-icon>
+              </button>
+
+              <button class="btn-action bg-white rounded-full p-2">
+                <ion-icon name="bag-add-outline"></ion-icon>
+              </button>
+            </div>
+          </div>
+
+          <div class="p-4">
+            <a href="#" class="block text-gray-500 text-sm mb-2">Skirt</a>
+
+            <h3>
+              <a href="#" class="text-lg font-semibold"
+                >Black Floral Wrap Midi Skirt</a
+              >
+            </h3>
+
+            <div class="flex items-center mt-2">
+              <ion-icon name="star" class="text-yellow-500"></ion-icon>
+              <ion-icon name="star" class="text-yellow-500"></ion-icon>
+              <ion-icon name="star" class="text-yellow-500"></ion-icon>
+              <ion-icon name="star" class="text-yellow-500"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </div>
+
+            <div class="mt-2">
+              <span class="text-xl font-bold">$25.00</span>
+              <del class="text-gray-500 ml-2">$35.00</del>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="/script.js"></script>
+
+    <!--
+    - ionicon link
+  -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
   </body>
 </html>

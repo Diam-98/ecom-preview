@@ -75,5 +75,5 @@ document.addEventListener('DOMContentLoaded', function () {
     startAutoSlide()
   }
 
-  startAutoSlide()
+  // startAutoSlide()
 })
