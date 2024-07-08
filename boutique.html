@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css"
+      integrity="sha512-UuQ/zJlbMVAw/UU8vVBhnI4op+/tFOpQZVT+FormmIEhRSCnJWyHiBbEVgM4Uztsht41f3FzVWgLuwzUqOObKw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              firstColor: '#efefef',
+            },
+          },
+        },
+      }
+    </script>
+    <title>O - ECM</title>
+  </head>
+  <body>
+    <header>
+      <!--TOP PART-->
+      <marquee class="bg-firstColor p-2">
+        <div class="flex items-center justify-between">
+          <a href="/" class="text-black text-xs"
+            >Propmotion -30% de reduction.</a
+          >
+          <a href="/" class="text-black text-xs"
+            >Livraison gratuit a partir de 5000 F</a
+          >
+          <a href="/" class="text-black text-xs"
+            >Propmotion -30% de reduction.</a
+          >
+          <a href="/" class="text-black text-xs"
+            >Livraison gratuit a partir de 5000 F</a
+          >
+          <a href="/" class="text-black text-xs"
+            >Propmotion -30% de reduction.</a
+          >
+          <a href="/" class="text-black text-xs"
+            >Livraison gratuit a partir de 5000 F</a
+          >
+        </div>
+      </marquee>
+
+      <!-- BOTTOM PART -->
+      <div class="flex items-center justify-between px-7 py-3 shadow-md">
+        <!-- LEFT PART : menu -->
+        <ul class="hidden md:flex items-center gap-4">
+          <li><a href="/">Boutique</a></li>
+          <li><a href="/">A Propos</a></li>
+          <li><a href="/">Contact</a></li>
+        </ul>
+        <!-- MIDDLE PART -->
+        <div class="flex items-center justify-between gap-5">
+          <button id="menu-button" class="md:hidden">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+          </button>
+          <h1 class="font-bold text-lg">AlAmin-Design</h1>
+        </div>
+        <!-- RIGHT PART -->
+        <div class="flex items-center gap-4">
+          <form
+            class="ring-1 ring-[#e1e1e1] px-3 py-1 rounded-2xl hidden md:block"
+          >
+            <input
+              type="search"
+              placeholder="Rechercher un produit"
+              class="outline-none"
+            />
+            <button><i class="fa fa-search" aria-hidden="true"></i></button>
+          </form>
+          <!-- BUTTON SEARCH -->
+          <button id="search-button" class="md:hidden">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+          <button id="user-button">
+            <i class="fa fa-user-circle" aria-hidden="true"></i>
+          </button>
+          <div class="relative">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <span
+              class="h-4 w-4 bg-red-500 text-white flex items-center justify-center rounded-full absolute -top-1 -right-2 text-xs"
+              >3</span
+            >
+          </div>
+        </div>
+      </div>
+      <!-- MOBILE SEARCH -->
+      <div
+        id="mobile-search"
+        class="absolute w-full flex items-center justify-center p-5 bg-white shadow-md hidden md:hidden search-menu z-100"
+      >
+        <form class="ring-1 ring-[#e1e1e1] w-full px-3 py-1 rounded-lg">
+          <input
+            type="search"
+            placeholder="Rechercher un produit"
+            class="outline-none w-[92%]"
+          />
+          <button><i class="fa fa-search" aria-hidden="true"></i></button>
+        </form>
+      </div>
+    </header>
+
+    <!--HERO SECTION-->
+    <div class="w-full h-[calc(50vh-93.6px)] relative -z-10">
+      <img
+        src="https://static.vecteezy.com/ti/vecteur-libre/p1/4299835-achats-en-ligne-sur-telephone-achat-vente-entreprise-digital-web-banner-application-argent-publicite-paiement-ecommerce-vector-illustration-search-gratuit-vectoriel.jpg"
+        alt=""
+        class="w-full h-full object-cover"
+      />
+      <div
+        class="absolute w-full h-full top-0 left-0 bg-[#00000091] flex items-center justify-center"
+      >
+        <h2 class="text-3xl font-bold text-white">Boutique</h2>
+      </div>
+    </div>
+
+    <!-- MENU MODAL -->
+    <div
+      id="menu-drawer-id"
+      class="absolute top-0 pt-[93.6px] bottom-0 w-full h-screen overflow-hidden hidden md:hidden menu-drawer z-100"
+    >
+      <div
+        class="left-0 w-[250px] h-[calc(100vh-93.6px)] bg-white border z-100"
+      >
+        <ul class="mt-10 flex flex-col gap-8 w-full">
+          <li class="w-full hover:bg-firstColor px-8 py-1">
+            <a href="/">Boutique</a>
+          </li>
+          <li class="w-full hover:bg-firstColor px-8 py-1">
+            <a href="/">A Propos</a>
+          </li>
+          <li class="w-full hover:bg-firstColor px-8 py-1">
+            <a href="/">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!--PRODCUT GRID-->
+    <div class="w-full p-4">
+      <ul class="flex items-center gap-2">
+        <li><a href="/">Accueil</a></li>
+        <li>/</li>
+        <li>Boutique</li>
+      </ul>
+      <hr />
+      <div class="w-full flex max-md:flex-col gap-3 mb-5 mt-16">
+        <div
+          class="w-[15%] max-md:w-full border border-grey-500 rounded-md p-3 max-h-[300px]"
+        >
+          <h4 class="font-semibold text-sm my-4">Filter les produits par :</h4>
+          <div class="flex flex-col gap-3">
+            <label for="rangeInput" class="text-xs"
+              >Selectionnner un prix</label
+            >
+            <div class="flex flex-col">
+              <input
+                type="range"
+                id="rangeInput"
+                min="1000"
+                max="100000"
+                step="1000"
+                value="1000"
+                oninput="updateValue(this.value)"
+                class="w-full"
+              />
+              <div class="flex justify-between text-sm text-gray-600 mt-2">
+                <span id="minValue">1000</span>
+                <span id="maxValue">100000</span>
+              </div>
+            </div>
+            <span id="rangeValue" class="text-lg font-semibold">1000</span>
+          </div>
+        </div>
+        <div class="w-[85%] max-md:w-full">
+          <!--
+            PRODUCT GRID
+            -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="border rounded-lg overflow-hidden">
+              <!--SHOWCASE BANNER-->
+              <div class="relative showcase">
+                <img
+                  src="/cstm-1.jpg"
+                  alt="Mens Winter Leathers Jackets"
+                  width="300"
+                  class="w-full h-full object-cover relative z-1 transform transition-transform duration-300 ease-in-out default"
+                />
+                <img
+                  src="/cstm-2.jpeg"
+                  alt="Mens Winter Leathers Jackets"
+                  class="w-full h-full object-cover absolute top-0 left-0 z-2 opacity-0 hover:opacity-1 transform transition-transform duration-300 ease-in-out hover"
+                />
+
+                <p
+                  class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 text-xs font-bold rounded"
+                >
+                  15%
+                </p>
+
+                <div
+                  class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2"
+                >
+                  <button class="btn-action bg-white rounded-full p-2">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </button>
+
+                  <button class="btn-action bg-white rounded-full p-2">
+                    <ion-icon name="bag-add-outline"></ion-icon>
+                  </button>
+                </div>
+              </div>
+
+              <div class="p-4">
+                <a href="#" class="block text-gray-500 text-sm mb-2">Costume</a>
+
+                <a href="#">
+                  <h3 class="text-md font-semibold">
+                    COSTUME AFRICAIN SUPER 120
+                  </h3>
+                </a>
+
+                <div class="mt-2">
+                  <span class="text-xl font-bold">30.000 FCFA</span>
+                  <del class="text-gray-500 ml-2">45.000 FCFA</del>
+                </div>
+              </div>
+            </div>
+
+            <div class="border rounded-lg overflow-hidden">
+              <!--SHOWCASE BANNER-->
+              <div class="relative showcase">
+                <img
+                  src="/im0.jpg"
+                  alt="Mens Winter Leathers Jackets"
+                  width="300"
+                  class="w-full h-full object-cover relative z-1 transform transition-transform duration-300 ease-in-out default"
+                />
+                <img
+                  src="/im01.jpg"
+                  alt="Mens Winter Leathers Jackets"
+                  class="w-full h-full object-cover absolute top-0 left-0 z-2 opacity-0 hover:opacity-1 transform transition-transform duration-300 ease-in-out hover"
+                />
+
+                <p
+                  class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 text-xs font-bold rounded"
+                >
+                  15%
+                </p>
+
+                <div
+                  class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2"
+                >
+                  <button class="btn-action bg-white rounded-full p-2">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </button>
+
+                  <button class="btn-action bg-white rounded-full p-2">
+                    <ion-icon name="bag-add-outline"></ion-icon>
+                  </button>
+                </div>
+              </div>
+
+              <div class="p-4">
+                <a href="#" class="block text-gray-500 text-sm mb-2">Costume</a>
+
+                <a href="#">
+                  <h3 class="text-md font-semibold">
+                    COSTUME AFRICAIN SUPER 120
+                  </h3>
+                </a>
+
+                <div class="mt-2">
+                  <span class="text-xl font-bold">35.000 FCFA</span>
+                  <del class="text-gray-500 ml-2">49.000 FCFA</del>
+                </div>
+              </div>
+            </div>
+
+            <div class="border rounded-lg overflow-hidden">
+              <!--SHOWCASE BANNER-->
+              <div class="relative showcase">
+                <img
+                  src="/im1.jpeg"
+                  alt="Mens Winter Leathers Jackets"
+                  width="300"
+                  class="w-full h-full object-cover relative z-1 transform transition-transform duration-300 ease-in-out default"
+                />
+                <img
+                  src="/im11.jpg"
+                  alt="Mens Winter Leathers Jackets"
+                  class="w-full h-full object-cover absolute top-0 left-0 z-2 opacity-0 hover:opacity-1 transform transition-transform duration-300 ease-in-out hover"
+                />
+
+                <p
+                  class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 text-xs font-bold rounded"
+                >
+                  15%
+                </p>
+
+                <div
+                  class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2"
+                >
+                  <button class="btn-action bg-white rounded-full p-2">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </button>
+
+                  <button class="btn-action bg-white rounded-full p-2">
+                    <ion-icon name="bag-add-outline"></ion-icon>
+                  </button>
+                </div>
+              </div>
+
+              <div class="p-4">
+                <a href="#" class="block text-gray-500 text-sm mb-2">Costume</a>
+
+                <a href="#">
+                  <h3 class="text-md font-semibold">
+                    COSTUME AFRICAIN SUPER 120
+                  </h3>
+                </a>
+
+                <div class="mt-2">
+                  <span class="text-xl font-bold">28.000 FCFA</span>
+                  <del class="text-gray-500 ml-2">39.000 FCFA</del>
+                </div>
+              </div>
+            </div>
+
+            <div class="border rounded-lg overflow-hidden">
+              <!--SHOWCASE BANNER-->
+              <div class="relative showcase">
+                <img
+                  src="/im2.jpg"
+                  alt="Mens Winter Leathers Jackets"
+                  width="300"
+                  class="w-full h-full object-cover relative z-1 transform transition-transform duration-300 ease-in-out default"
+                />
+                <img
+                  src="/im22.jpg"
+                  alt="Mens Winter Leathers Jackets"
+                  class="w-full h-full object-cover absolute top-0 left-0 z-2 opacity-0 hover:opacity-1 transform transition-transform duration-300 ease-in-out hover"
+                />
+
+                <p
+                  class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 text-xs font-bold rounded"
+                >
+                  15%
+                </p>
+
+                <div
+                  class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2"
+                >
+                  <button class="btn-action bg-white rounded-full p-2">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </button>
+
+                  <button class="btn-action bg-white rounded-full p-2">
+                    <ion-icon name="bag-add-outline"></ion-icon>
+                  </button>
+                </div>
+              </div>
+
+              <div class="p-4">
+                <a href="#" class="block text-gray-500 text-sm mb-2">Costume</a>
+
+                <a href="#">
+                  <h3 class="text-md font-semibold">
+                    COSTUME AFRICAIN SUPER 120
+                  </h3>
+                </a>
+
+                <div class="mt-2">
+                  <span class="text-xl font-bold">18.000 FCFA</span>
+                  <del class="text-gray-500 ml-2">23.000 FCFA</del>
+                </div>
+              </div>
+            </div>
+
+            <div class="border rounded-lg overflow-hidden">
+              <!--SHOWCASE BANNER-->
+              <div class="relative showcase">
+                <img
+                  src="/im2.jpg"
+                  alt="Mens Winter Leathers Jackets"
+                  width="300"
+                  class="w-full h-full object-cover relative z-1 transform transition-transform duration-300 ease-in-out default"
+                />
+                <img
+                  src="/im22.jpg"
+                  alt="Mens Winter Leathers Jackets"
+                  class="w-full h-full object-cover absolute top-0 left-0 z-2 opacity-0 hover:opacity-1 transform transition-transform duration-300 ease-in-out hover"
+                />
+
+                <p
+                  class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 text-xs font-bold rounded"
+                >
+                  15%
+                </p>
+
+                <div
+                  class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2"
+                >
+                  <button class="btn-action bg-white rounded-full p-2">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </button>
+
+                  <button class="btn-action bg-white rounded-full p-2">
+                    <ion-icon name="bag-add-outline"></ion-icon>
+                  </button>
+                </div>
+              </div>
+
+              <div class="p-4">
+                <a href="#" class="block text-gray-500 text-sm mb-2">Costume</a>
+
+                <a href="#">
+                  <h3 class="text-md font-semibold">
+                    COSTUME AFRICAIN SUPER 120
+                  </h3>
+                </a>
+
+                <div class="mt-2">
+                  <span class="text-xl font-bold">18.000 FCFA</span>
+                  <del class="text-gray-500 ml-2">23.000 FCFA</del>
+                </div>
+              </div>
+            </div>
+
+            <div class="border rounded-lg overflow-hidden">
+              <!--SHOWCASE BANNER-->
+              <div class="relative showcase">
+                <img
+                  src="/im2.jpg"
+                  alt="Mens Winter Leathers Jackets"
+                  width="300"
+                  class="w-full h-full object-cover relative z-1 transform transition-transform duration-300 ease-in-out default"
+                />
+                <img
+                  src="/im22.jpg"
+                  alt="Mens Winter Leathers Jackets"
+                  class="w-full h-full object-cover absolute top-0 left-0 z-2 opacity-0 hover:opacity-1 transform transition-transform duration-300 ease-in-out hover"
+                />
+
+                <p
+                  class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 text-xs font-bold rounded"
+                >
+                  15%
+                </p>
+
+                <div
+                  class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2"
+                >
+                  <button class="btn-action bg-white rounded-full p-2">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </button>
+
+                  <button class="btn-action bg-white rounded-full p-2">
+                    <ion-icon name="bag-add-outline"></ion-icon>
+                  </button>
+                </div>
+              </div>
+
+              <div class="p-4">
+                <a href="#" class="block text-gray-500 text-sm mb-2">Costume</a>
+
+                <a href="#">
+                  <h3 class="text-md font-semibold">
+                    COSTUME AFRICAIN SUPER 120
+                  </h3>
+                </a>
+
+                <div class="mt-2">
+                  <span class="text-xl font-bold">18.000 FCFA</span>
+                  <del class="text-gray-500 ml-2">23.000 FCFA</del>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      -FOOTER PART
+    -->
+    <footer class="bg-[#f5f5f5] py-8">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap justify-between">
+          <div
+            class="w-full flex flex-col md:items-center gap-5 md:w-1/3 mb-6 md:mb-0"
+          >
+            <h3 class="text-xl font-semibold mb-4">Contactez-Nous</h3>
+            <p class="">HLM Grand Yoff, Dakar, Senegal</p>
+            <p class="">Email: info@example.com</p>
+            <p class="">Telephone: +221 77 000 00 00</p>
+          </div>
+          <div
+            class="w-full flex flex-col md:items-center gap-5 md:w-1/3 mb-6 md:mb-0"
+          >
+            <h3 class="text-xl font-semibold mb-4">Liens rapides</h3>
+            <ul>
+              <li class="mb-2">
+                <a href="#" class="hover:text-slate-500">Accueil</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="hover:text-slate-500">Boutique</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="hover:text-slate-500">Apropos</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-slate-500">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="w-full flex flex-col md:items-center gap-5 md:w-1/3">
+            <h3 class="text-xl font-semibold mb-4">Suivez Nous</h3>
+            <div class="flex flex-col gap-4">
+              <a href="#" class="hover:text-slate-500 flex items-center gap-3"
+                ><i class="fab fa-facebook-f"></i>
+                <span>Facebook</span>
+              </a>
+              <a href="#" class="hover:text-slate-500 flex items-center gap-3"
+                ><i class="fab fa-twitter"></i>
+                <span>Twitter</span>
+              </a>
+              <a href="#" class="hover:text-slate-500 flex items-center gap-3"
+                ><i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+              </a>
+              <a href="#" class="hover:text-slate-500 flex items-center gap-3"
+                ><i class="fab fa-linkedin-in"></i>
+                <span>Linkedin</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8 text-center">
+          <p class="text-spanish-gray">
+            &copy; 2024 AlAmin Design. Tout Droit Reserve.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/script.js"></script>
+
+    <!--
+    - ionicon link
+  -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

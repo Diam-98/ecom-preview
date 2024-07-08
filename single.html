@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css"
+      integrity="sha512-UuQ/zJlbMVAw/UU8vVBhnI4op+/tFOpQZVT+FormmIEhRSCnJWyHiBbEVgM4Uztsht41f3FzVWgLuwzUqOObKw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              firstColor: '#efefef',
+            },
+          },
+        },
+      }
+    </script>
+    <title>O - ECM</title>
+  </head>
+  <body>
+    <header>
+      <!--TOP PART-->
+      <marquee class="bg-firstColor p-2">
+        <div class="flex items-center justify-between">
+          <a href="/" class="text-black text-xs"
+            >Propmotion -30% de reduction.</a
+          >
+          <a href="/" class="text-black text-xs"
+            >Livraison gratuit a partir de 5000 F</a
+          >
+          <a href="/" class="text-black text-xs"
+            >Propmotion -30% de reduction.</a
+          >
+          <a href="/" class="text-black text-xs"
+            >Livraison gratuit a partir de 5000 F</a
+          >
+          <a href="/" class="text-black text-xs"
+            >Propmotion -30% de reduction.</a
+          >
+          <a href="/" class="text-black text-xs"
+            >Livraison gratuit a partir de 5000 F</a
+          >
+        </div>
+      </marquee>
+
+      <!-- BOTTOM PART -->
+      <div class="flex items-center justify-between px-7 py-3 shadow-md">
+        <!-- LEFT PART : menu -->
+        <ul class="hidden md:flex items-center gap-4">
+          <li><a href="/">Boutique</a></li>
+          <li><a href="/">A Propos</a></li>
+          <li><a href="/">Contact</a></li>
+        </ul>
+        <!-- MIDDLE PART -->
+        <div class="flex items-center justify-between gap-5">
+          <button id="menu-button" class="md:hidden">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+          </button>
+          <h1 class="font-bold text-lg">AlAmin-Design</h1>
+        </div>
+        <!-- RIGHT PART -->
+        <div class="flex items-center gap-4">
+          <form
+            class="ring-1 ring-[#e1e1e1] px-3 py-1 rounded-2xl hidden md:block"
+          >
+            <input
+              type="search"
+              placeholder="Rechercher un produit"
+              class="outline-none"
+            />
+            <button><i class="fa fa-search" aria-hidden="true"></i></button>
+          </form>
+          <!-- BUTTON SEARCH -->
+          <button id="search-button" class="md:hidden">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+          <button id="user-button">
+            <i class="fa fa-user-circle" aria-hidden="true"></i>
+          </button>
+          <div class="relative">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <span
+              class="h-4 w-4 bg-red-500 text-white flex items-center justify-center rounded-full absolute -top-1 -right-2 text-xs"
+              >3</span
+            >
+          </div>
+        </div>
+      </div>
+      <!-- MOBILE SEARCH -->
+      <div
+        id="mobile-search"
+        class="absolute w-full flex items-center justify-center p-5 bg-white shadow-md hidden md:hidden search-menu z-100"
+      >
+        <form class="ring-1 ring-[#e1e1e1] w-full px-3 py-1 rounded-lg">
+          <input
+            type="search"
+            placeholder="Rechercher un produit"
+            class="outline-none w-[92%]"
+          />
+          <button><i class="fa fa-search" aria-hidden="true"></i></button>
+        </form>
+      </div>
+    </header>
+
+    <!--HERO SECTION-->
+    <div class="w-full h-[calc(50vh-93.6px)] relative -z-10">
+      <img
+        src="https://static.vecteezy.com/ti/vecteur-libre/p1/4299835-achats-en-ligne-sur-telephone-achat-vente-entreprise-digital-web-banner-application-argent-publicite-paiement-ecommerce-vector-illustration-search-gratuit-vectoriel.jpg"
+        alt=""
+        class="w-full h-full object-cover"
+      />
+      <div
+        class="absolute w-full h-full top-0 left-0 bg-[#00000091] flex items-center justify-center"
+      >
+        <h2 class="text-3xl font-bold text-white">Boutique</h2>
+      </div>
+    </div>
+
+    <!-- MENU MODAL -->
+    <div
+      id="menu-drawer-id"
+      class="absolute top-0 pt-[93.6px] bottom-0 w-full h-screen overflow-hidden hidden md:hidden menu-drawer z-100"
+    >
+      <div
+        class="left-0 w-[250px] h-[calc(100vh-93.6px)] bg-white border z-100"
+      >
+        <ul class="mt-10 flex flex-col gap-8 w-full">
+          <li class="w-full hover:bg-firstColor px-8 py-1">
+            <a href="/">Boutique</a>
+          </li>
+          <li class="w-full hover:bg-firstColor px-8 py-1">
+            <a href="/">A Propos</a>
+          </li>
+          <li class="w-full hover:bg-firstColor px-8 py-1">
+            <a href="/">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!--
+      -SINGLE PRODUCT
+    -->
+    <section class="product_section py-8">
+      <div class="product_container container mx-auto">
+        <div class="top_row flex flex-wrap">
+          <div class="col w-full md:w-1/2">
+            <div class="productgalley">
+              <div class="swiper swiper-container productgalley-slider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img
+                      src="../assets/img/products/productset/set1/img01.jpeg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="../assets/img/products/productset/set1/img02.jpeg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="../assets/img/products/productset/set1/img03.jpeg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="../assets/img/products/productset/set1/img04.jpeg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-container productgalley-thumbs mt-4">
+                <div class="swiper-wrapper flex">
+                  <div class="swiper-slide w-1/4">
+                    <img
+                      src="../assets/img/products/productset/set1/img04.jpeg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="swiper-slide w-1/4">
+                    <img
+                      src="../assets/img/products/productset/set1/img01.jpeg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="swiper-slide w-1/4">
+                    <img
+                      src="../assets/img/products/productset/set1/img02.jpeg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="swiper-slide w-1/4">
+                    <img
+                      src="../assets/img/products/productset/set1/img03.jpeg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col w-full md:w-1/2">
+            <div class="product_info_container p-4">
+              <div class="product_info_text_container">
+                <h1 class="text-2xl font-bold">Cider</h1>
+                <p class="text-lg">
+                  Glitter Criss Cross Knotted Jumpsuit (Set of 2)
+                </p>
+                <p class="mt-2 text-sm">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Provident corporis, odit velit esse a amet magni ut
+                  repudiandae assumenda dolorum consequatur doloremque at nemo
+                  omnis dolores dolore libero, quae magnam.
+                </p>
+                <p class="mt-2 text-sm">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Obcaecati molestias beatae expedita, aperiam, soluta, eveniet
+                  neque omnis repellat asperiores modi tenetur quis? Quisquam,
+                  itaque necessitatibus. Qui iusto recusandae ipsum sed!
+                </p>
+                <div class="price flex items-center mt-4">
+                  <h2 class="text-xl font-bold text-red-600">37500 FCFA</h2>
+                  <div class="offer ml-4 text-green-600">35% Off</div>
+                </div>
+
+                <div class="product_button mt-4">
+                  <div class="counter flex items-center space-x-2">
+                    <span
+                      onClick="decreaseCount(event, this)"
+                      class="cursor-pointer text-2xl text-gray-600"
+                    >
+                      <i class="fa-solid fa-circle-minus"></i>
+                    </span>
+                    <input
+                      type="text"
+                      value="1"
+                      class="w-12 text-center border rounded"
+                    />
+                    <span
+                      onClick="increaseCount(event, this)"
+                      class="cursor-pointer text-2xl text-gray-600"
+                    >
+                      <i class="fa-solid fa-circle-plus"></i>
+                    </span>
+                  </div>
+                  <button
+                    class="cartbtn mt-4 px-6 py-2 bg-blue-600 text-white rounded"
+                  >
+                    Add To Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="product_bottom">
+      <div class="product_tab_container">
+        <div class="tabs-container">
+          <div class="tabs">
+            <button class="tab active" onclick="openTab(event, 'tab1')">
+              Descripion
+            </button>
+            <button class="tab" onclick="openTab(event, 'tab2')">
+              Additional Information
+            </button>
+            <button class="tab" onclick="openTab(event, 'tab3')">
+              Reviews(0)
+            </button>
+          </div>
+          <div class="tab-content desc" id="tab1">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Deserunt, non voluptate maxime illo reiciendis laborum sunt
+              corrupti et impedit provident voluptatum pariatur dignissimos,
+              consequatur excepturi qui quasi dolorem minima reprehenderit!
+              Consequatur excepturi enim quaerat. Impedit fugiat quis nobis eius
+              rem inventore, culpa corrupti reprehenderit corporis debitis sed
+              quidem aspernatur. Odio, dolores libero at provident totam
+              consectetur dolor magni minus obcaecati! Praesentium ipsa quae
+              ullam suscipit, cumque doloribus laudantium ut tenetur non quos
+              iste velit dolore nemo inventore, iure hic quam repellendus
+              repudiandae ducimus minima? Dolore incidunt consequuntur aut qui
+              at.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Deserunt, non voluptate maxime illo reiciendis laborum sunt
+              corrupti et impedit provident voluptatum pariatur dignissimos,
+              consequatur excepturi qui quasi dolorem minima reprehenderit!
+              Consequatur excepturi enim quaerat. Impedit fugiat quis nobis eius
+              rem inventore, culpa corrupti reprehenderit corporis debitis sed
+              quidem aspernatur. Odio, dolores libero at provident totam
+              consectetur dolor magni minus obcaecati! Praesentium ipsa quae
+              ullam suscipit, cumque doloribus laudantium ut tenetur non quos
+              iste velit dolore nemo inventore, iure hic quam repellendus
+              repudiandae ducimus minima? Dolore incidunt consequuntur aut qui
+              at.
+            </p>
+          </div>
+          <div class="tab-content" id="tab2" style="display: none">
+            <div class="product-single__addtional-info">
+              <div class="item">
+                <label class="addtional-info-label">Weight</label>
+                <span>1.25 kg</span>
+              </div>
+              <div class="item">
+                <label class="addtional-info-label">Dimensions</label>
+                <span>90 x 60 x 90 cm</span>
+              </div>
+              <div class="item">
+                <label class="addtional-info-label">Size</label>
+                <span>XS, S, M, L, XL</span>
+              </div>
+              <div class="item">
+                <label class="addtional-info-label">Color</label>
+                <span>Black, Orange, White</span>
+              </div>
+              <div class="item">
+                <label class="addtional-info-label">Storage</label>
+                <span>Relaxed fit shirt-style dress with a rugged</span>
+              </div>
+            </div>
+          </div>
+          <div class="tab-content review" id="tab3" style="display: none">
+            <h1>No Review Found</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--
+      -FOOTER PART
+    -->
+    <footer class="bg-[#f5f5f5] py-8">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap justify-between">
+          <div
+            class="w-full flex flex-col md:items-center gap-5 md:w-1/3 mb-6 md:mb-0"
+          >
+            <h3 class="text-xl font-semibold mb-4">Contactez-Nous</h3>
+            <p class="">HLM Grand Yoff, Dakar, Senegal</p>
+            <p class="">Email: info@example.com</p>
+            <p class="">Telephone: +221 77 000 00 00</p>
+          </div>
+          <div
+            class="w-full flex flex-col md:items-center gap-5 md:w-1/3 mb-6 md:mb-0"
+          >
+            <h3 class="text-xl font-semibold mb-4">Liens rapides</h3>
+            <ul>
+              <li class="mb-2">
+                <a href="#" class="hover:text-slate-500">Accueil</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="hover:text-slate-500">Boutique</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="hover:text-slate-500">Apropos</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-slate-500">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="w-full flex flex-col md:items-center gap-5 md:w-1/3">
+            <h3 class="text-xl font-semibold mb-4">Suivez Nous</h3>
+            <div class="flex flex-col gap-4">
+              <a href="#" class="hover:text-slate-500 flex items-center gap-3"
+                ><i class="fab fa-facebook-f"></i>
+                <span>Facebook</span>
+              </a>
+              <a href="#" class="hover:text-slate-500 flex items-center gap-3"
+                ><i class="fab fa-twitter"></i>
+                <span>Twitter</span>
+              </a>
+              <a href="#" class="hover:text-slate-500 flex items-center gap-3"
+                ><i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+              </a>
+              <a href="#" class="hover:text-slate-500 flex items-center gap-3"
+                ><i class="fab fa-linkedin-in"></i>
+                <span>Linkedin</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8 text-center">
+          <p class="text-spanish-gray">
+            &copy; 2024 AlAmin Design. Tout Droit Reserve.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/script.js"></script>
+
+    <!--
+    - ionicon link
+  -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/fontawesome.min.js"
+      integrity="sha512-1M9vud0lqoXACA9QaA8IY8k1VR2dMJ2Qmqzt9pN2AH7eQHWpNsxBpaayV0kKkUsF7FLVQ2sA2SSc8w5VOm7/mg=="
+      crossorigin="anonymous"
+      referrerpo
+      <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </body>
+</html>
