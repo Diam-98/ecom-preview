@@ -82,59 +82,23 @@ function updateValue(value) {
   document.getElementById('rangeValue').innerText = value
 }
 
-var swiper = new Swiper('.mySwiper2', {
-  slidesPerView: 5,
-  spaceBetween: 30,
-  freeMode: true,
-  loop: true,
+const allHoverImages = document.querySelectorAll('.hover-container div img')
+const imgContainer = document.querySelector('.img-container')
 
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  scrollbar: {
-    el: '.swiper-scrollbar',
-    hide: true,
-  },
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-  },
-  breakpoints: {
-    '@0.00': {
-      slidesPerView: 2,
-      spaceBetween: 10,
-    },
-    '@0.75': {
-      slidesPerView: 3,
-      spaceBetween: 20,
-    },
-    '@1.00': {
-      slidesPerView: 3,
-      spaceBetween: 40,
-    },
-    '@1.50': {
-      slidesPerView: 5,
-      spaceBetween: 50,
-    },
-  },
+window.addEventListener('DOMContentLoaded', () => {
+  allHoverImages[0].parentElement.classList.add('active')
 })
 
-var slider = new Swiper('.productgalley-slider', {
-  slidesPerView: 1,
-  centeredSlides: true,
-  loop: true,
-  loopedSlides: 6,
+allHoverImages.forEach((image) => {
+  image.addEventListener('mouseover', () => {
+    imgContainer.querySelector('img').src = image.src
+    resetActiveImg()
+    image.parentElement.classList.add('active')
+  })
 })
 
-var thumbs = new Swiper('.productgalley-thumbs', {
-  slidesPerView: 'auto',
-  direction: 'vertical',
-  spaceBetween: 10,
-  centeredSlides: true,
-  loop: true,
-  slideToClickedSlide: true,
-})
-
-slider.controller.control = thumbs
-thumbs.controller.control = slider
+function resetActiveImg() {
+  allHoverImages.forEach((img) => {
+    img.parentElement.classList.remove('active')
+  })
+}
