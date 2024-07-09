@@ -66,7 +66,8 @@
       <div class="flex items-center justify-between px-7 py-3 shadow-md">
         <!-- LEFT PART : menu -->
         <ul class="hidden md:flex items-center gap-4">
-          <li><a href="/">Boutique</a></li>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/boutique.html">Boutique</a></li>
           <li><a href="/">A Propos</a></li>
           <li><a href="/">Contact</a></li>
         </ul>
@@ -75,7 +76,9 @@
           <button id="menu-button" class="md:hidden">
             <i class="fa fa-bars" aria-hidden="true"></i>
           </button>
-          <h1 class="font-bold text-lg">AlAmin-Design</h1>
+          <div class="w-[180px] max-sm:w-[100px] max-sm:h-[30px] h-[50px]">
+            <img src="/logo.jpg" class="w-full h-full" alt="logo" />
+          </div>
         </div>
         <!-- RIGHT PART -->
         <div class="flex items-center gap-4">
@@ -167,11 +170,11 @@
         <li>Boutique</li>
       </ul>
       <hr />
-      <div class="flex items-center">
-        <div class="w-full px-3 container">
-          <div class="flex max-md:flex-col gap-4">
+      <div class="w-full">
+        <div class="w-full px-3">
+          <div class="flex max-md:flex-col gap-4 justify-between">
             <div
-              class="w-[40%] max-sm:w-full max-sm:p-3 max-md:w-full flex max-sm:flex-col-reverse items-center gap-4 p-5"
+              class="w-[50%] max-sm:w-full max-sm:p-3 max-md:w-full flex max-sm:flex-col-reverse items-center gap-4 p-5"
             >
               <div
                 class="w-[25%] flex flex-col max-sm:flex-row max-sm:gap-2 max-sm:w-full gap-3 items-center justify-center mt-8 hover-container"
@@ -211,8 +214,9 @@
                 />
               </div>
             </div>
-            <div class="w-[60%] max-md:w-full p-5 flex flex-col gap-5">
+            <div class="w-[50%] max-md:w-full p-5 flex flex-col gap-5">
               <span class="font-bold">COSTUME AFRICAIN SUPER 120</span>
+              <hr />
               <span class="fonct-semibold text-lg">Prix : 45.000 FCFA</span>
 
               <p class="product-description">
@@ -224,15 +228,16 @@
                 facere sapiente culpa fugiat maiores expedita id doloribus sit,
                 consequuntur sint! Unde, quod.
               </p>
+              <hr />
               <div class="pt-16 flex flex-col gap-10">
                 <div class="w-full flex max-sm:flex-col items-center gap-4">
                   <div class="w-[20%] max-sm:w-full flex items-center gap-3">
                     <button type="button" class="p-3 border rounded-md">
-                      <i class="fas fa-shopping-cart"></i>
+                      <ion-icon name="remove"></ion-icon>
                     </button>
                     <span>4</span>
                     <button type="button" class="p-3 border rounded-md">
-                      <i class="fas fa-shopping-cart"></i>
+                      <ion-icon name="add"></ion-icon>
                     </button>
                   </div>
                   <button
@@ -257,7 +262,7 @@
 
       <hr class="my-5" />
 
-      <section class="my-4">
+      <section class="product_bottom my-4">
         <div class="product_tab_container">
           <div class="tabs-container">
             <div class="tabs">
@@ -265,10 +270,7 @@
                 Descripion
               </button>
               <button class="tab" onclick="openTab(event, 'tab2')">
-                Additional Information
-              </button>
-              <button class="tab" onclick="openTab(event, 'tab3')">
-                Reviews(0)
+                Informations Addintionnelles
               </button>
             </div>
             <div class="tab-content desc" id="tab1">
@@ -304,29 +306,14 @@
             <div class="tab-content" id="tab2" style="display: none">
               <div class="product-single__addtional-info">
                 <div class="item">
-                  <label class="addtional-info-label">Weight</label>
-                  <span>1.25 kg</span>
-                </div>
-                <div class="item">
-                  <label class="addtional-info-label">Dimensions</label>
-                  <span>90 x 60 x 90 cm</span>
-                </div>
-                <div class="item">
-                  <label class="addtional-info-label">Size</label>
+                  <label class="addtional-info-label">Taille</label>
                   <span>XS, S, M, L, XL</span>
                 </div>
                 <div class="item">
-                  <label class="addtional-info-label">Color</label>
-                  <span>Black, Orange, White</span>
-                </div>
-                <div class="item">
-                  <label class="addtional-info-label">Storage</label>
-                  <span>Relaxed fit shirt-style dress with a rugged</span>
+                  <label class="addtional-info-label">Couleur</label>
+                  <span>Noire, Orange, Blanc</span>
                 </div>
               </div>
-            </div>
-            <div class="tab-content review" id="tab3" style="display: none">
-              <h1>No Review Found</h1>
             </div>
           </div>
         </div>

@@ -102,3 +102,31 @@ function resetActiveImg() {
     img.parentElement.classList.remove('active')
   })
 }
+
+function openTab(evt, tabName) {
+  var i, tabContent, tabLinks
+
+  // Hide all tab content
+  tabContent = document.getElementsByClassName('tab-content')
+  for (i = 0; i < tabContent.length; i++) {
+    tabContent[i].style.display = 'none'
+  }
+
+  // Deactivate all tab links
+  tabLinks = document.getElementsByClassName('tab')
+  for (i = 0; i < tabLinks.length; i++) {
+    tabLinks[i].classList.remove('active')
+  }
+
+  // Show the selected tab content and mark the tab as active
+  document.getElementById(tabName).style.display = 'block'
+  evt.currentTarget.classList.add('active')
+
+  // Add animation to the tab content
+  var activeTabContent = document.getElementById(tabName)
+  activeTabContent.classList.add('fadeIn')
+}
+document.addEventListener('DOMContentLoaded', function () {
+  // Trigger click event on tab 1 button
+  document.querySelector('.tab').click()
+})
