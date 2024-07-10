@@ -2,8 +2,13 @@ document.addEventListener('DOMContentLoaded', function () {
   const searchButton = document.getElementById('search-button')
   const mobileSearch = document.getElementById('mobile-search')
 
+  // const menuButton = document.getElementById('menu-button')
+  // const menuDrawer = document.getElementById('menu-drawer-id')
+
   const menuButton = document.getElementById('menu-button')
-  const menuDrawer = document.getElementById('menu-drawer-id')
+  const overlay = document.getElementById('overlay')
+  const closeButton = document.getElementById('close-button')
+  const body = document.body
 
   const carousel = document.getElementById('carousel')
   const prevButton = document.getElementById('prev-button')
@@ -18,10 +23,28 @@ document.addEventListener('DOMContentLoaded', function () {
     mobileSearch.classList.toggle('show')
   })
 
-  menuButton.addEventListener('click', function (event) {
-    event.stopPropagation()
-    menuDrawer.classList.toggle('hidden')
-    menuDrawer.classList.toggle('show')
+  // menuButton.addEventListener('click', function (event) {
+  //   event.stopPropagation()
+  //   menuDrawer.classList.toggle('hidden')
+  //   menuDrawer.classList.toggle('show')
+  // })
+
+  menuButton.addEventListener('click', () => {
+    overlay.classList.remove('hidden')
+    body.classList.add('no-scroll')
+  })
+
+  closeButton.addEventListener('click', () => {
+    overlay.classList.add('hidden')
+    body.classList.remove('no-scroll')
+  })
+
+  // Optional: Close the overlay when clicking outside of it
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+      overlay.classList.add('hidden')
+      body.classList.remove('no-scroll')
+    }
   })
 
   document.addEventListener('click', function (event) {

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overlay Menu</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .no-scroll {
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <header
+      class="flex justify-between items-center p-4 bg-blue-500 text-white"
+    >
+      <h1 class="text-xl">My Website</h1>
+      <div class="flex items-center space-x-4">
+        <button id="menu-button" class="text-white focus:outline-none">
+          Menu
+        </button>
+        <button id="cart-button" class="text-white focus:outline-none">
+          Cart
+        </button>
+      </div>
+    </header>
+
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden">
+      <div class="absolute top-0 right-0 w-64 h-full bg-white shadow-lg p-4">
+        <button id="close-button" class="text-gray-700 focus:outline-none">
+          Close
+        </button>
+        <ul class="mt-4">
+          <li class="py-2"><a href="#" class="text-gray-700">Home</a></li>
+          <li class="py-2"><a href="#" class="text-gray-700">About</a></li>
+          <li class="py-2"><a href="#" class="text-gray-700">Services</a></li>
+          <li class="py-2"><a href="#" class="text-gray-700">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="cart-overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden">
+      <div class="absolute top-0 right-0 w-64 h-full bg-white shadow-lg p-4">
+        <button id="cart-close-button" class="text-gray-700 focus:outline-none">
+          Close
+        </button>
+        <h2 class="text-xl mb-4">Selected Items</h2>
+        <ul class="mt-4">
+          <li class="py-2"><a href="#" class="text-gray-700">Item 1</a></li>
+          <li class="py-2"><a href="#" class="text-gray-700">Item 2</a></li>
+          <li class="py-2"><a href="#" class="text-gray-700">Item 3</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="test.js"></script>
+  </body>
+</html>

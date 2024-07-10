@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css"
+      integrity="sha512-UuQ/zJlbMVAw/UU8vVBhnI4op+/tFOpQZVT+FormmIEhRSCnJWyHiBbEVgM4Uztsht41f3FzVWgLuwzUqOObKw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              firstColor: '#efefef',
+            },
+          },
+        },
+      }
+    </script>
+    <title>O - ECM</title>
+  </head>
+  <body>
+    <header>
+      <!--TOP PART-->
+      <marquee class="bg-firstColor p-2">
+        <div class="flex items-center justify-between">
+          <a href="/" class="text-black text-xs"
+            >Propmotion -30% de reduction.</a
+          >
+          <a href="/" class="text-black text-xs"
+            >Livraison gratuit a partir de 5000 F</a
+          >
+          <a href="/" class="text-black text-xs"
+            >Propmotion -30% de reduction.</a
+          >
+          <a href="/" class="text-black text-xs"
+            >Livraison gratuit a partir de 5000 F</a
+          >
+          <a href="/" class="text-black text-xs"
+            >Propmotion -30% de reduction.</a
+          >
+          <a href="/" class="text-black text-xs"
+            >Livraison gratuit a partir de 5000 F</a
+          >
+        </div>
+      </marquee>
+
+      <!-- BOTTOM PART -->
+      <div class="flex items-center justify-between px-7 py-3 shadow-md">
+        <!-- LEFT PART : menu -->
+        <ul class="hidden md:flex items-center gap-4">
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/boutique.html">Boutique</a></li>
+          <li><a href="/about.html">A Propos</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+        <!-- MIDDLE PART -->
+        <div class="flex items-center justify-between gap-5">
+          <button id="menu-button" class="md:hidden">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+          </button>
+          <div class="w-[180px] max-sm:w-[100px] max-sm:h-[30px] h-[50px]">
+            <img src="/logo.jpg" class="w-full h-full" alt="logo" />
+          </div>
+        </div>
+        <!-- RIGHT PART -->
+        <div class="flex items-center gap-4">
+          <form
+            class="ring-1 ring-[#e1e1e1] px-3 py-1 rounded-2xl hidden md:block"
+          >
+            <input
+              type="search"
+              placeholder="Rechercher un produit"
+              class="outline-none"
+            />
+            <button><i class="fa fa-search" aria-hidden="true"></i></button>
+          </form>
+          <!-- BUTTON SEARCH -->
+          <button id="search-button" class="md:hidden">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+          <button id="user-button">
+            <i class="fa fa-user-circle" aria-hidden="true"></i>
+          </button>
+          <div class="relative">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <span
+              class="h-4 w-4 bg-red-500 text-white flex items-center justify-center rounded-full absolute -top-1 -right-2 text-xs"
+              >3</span
+            >
+          </div>
+        </div>
+      </div>
+      <!-- MOBILE SEARCH -->
+      <div
+        id="mobile-search"
+        class="absolute w-full flex items-center justify-center p-5 bg-white shadow-md hidden md:hidden search-menu z-100"
+      >
+        <form class="ring-1 ring-[#e1e1e1] w-full px-3 py-1 rounded-lg">
+          <input
+            type="search"
+            placeholder="Rechercher un produit"
+            class="outline-none w-[92%]"
+          />
+          <button><i class="fa fa-search" aria-hidden="true"></i></button>
+        </form>
+      </div>
+    </header>
+
+    <!-- MENU MODAL -->
+    <div
+      id="menu-drawer-id"
+      class="absolute top-0 pt-[93.6px] bottom-0 w-full h-screen overflow-hidden hidden md:hidden menu-drawer z-100"
+    >
+      <div
+        class="left-0 w-[250px] h-[calc(100vh-93.6px)] bg-white border z-100"
+      >
+        <ul class="mt-10 flex flex-col gap-8 w-full">
+          <li class="w-full hover:bg-firstColor px-8 py-1">
+            <a href="/">Boutique</a>
+          </li>
+          <li class="w-full hover:bg-firstColor px-8 py-1">
+            <a href="/">A Propos</a>
+          </li>
+          <li class="w-full hover:bg-firstColor px-8 py-1">
+            <a href="/">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="w-full my-8 flex flex-col items-center justify-center">
+      <div class="max-lg:p-8 lg:w-[80%] w-full">
+        <span class="text-2xl font-semibold">Je passe ma commande</span>
+        <hr />
+        <div class="w-full flex flex-col-reverse lg:flex-row gap-5 my-4">
+          <!--CHECKOUT FORM-->
+          <form class="w-full lg:w-1/2 mt-4 flex flex-col gap-4">
+            <span class="text-lg"
+              >Mettre a jour mes contacts et mon adresse de Livraison</span
+            >
+            <input
+              type="text"
+              placeholder="Votre numero de telephone"
+              class="w-full outline-none p-3 border rounded-md"
+            />
+            <div class="w-full flex item-center gap-3">
+              <input
+                type="text"
+                name="address"
+                placeholder="Votre adresse"
+                class="w-1/2 outline-none p-3 border rounded-md"
+              />
+              <input
+                type="text"
+                name="city"
+                placeholder="Ville"
+                class="w-1/2 outline-none p-3 border rounded-md"
+              />
+            </div>
+            <div class="flex gap-3">
+              <input type="checkbox" id="subscribe" />
+              <label for="subscribe"
+                >J'accept de recevoir de m'inscrire pour de nouvelles
+                offres</label
+              >
+            </div>
+            <!--PAYMENT PART-->
+            <div class="">
+              <span>Choisir le mode de paiement</span>
+              <div class="flex gap-5 my-5">
+                <label class="payment-option relative cursor-pointer">
+                  <input
+                    type="radio"
+                    name="payment"
+                    value="wave"
+                    class="absolute opacity-0"
+                  />
+                  <img
+                    src="/wave.png"
+                    alt="Wave"
+                    class="w-20 h-20 border-2 rounded-md transition duration-300"
+                  />
+                </label>
+                <label class="payment-option relative cursor-pointer">
+                  <input
+                    type="radio"
+                    name="payment"
+                    value="om"
+                    class="absolute opacity-0"
+                  />
+                  <img
+                    src="/om.png"
+                    alt="Orange Money"
+                    class="w-20 h-20 border-2 rounded-md transition duration-300"
+                  />
+                </label>
+                <label class="payment-option relative cursor-pointer">
+                  <input
+                    type="radio"
+                    name="payment"
+                    value="free"
+                    class="absolute opacity-0"
+                  />
+                  <img
+                    src="/free.png"
+                    alt="Free"
+                    class="w-20 h-20 border-2 rounded-md transition duration-300"
+                  />
+                </label>
+              </div>
+            </div>
+            <span class="text-grey-500 text-xs"
+              >Finaliser maintenant votre commande et faites vous livrez</span
+            >
+            <button type="submit" class="bg-black p-3 text-white">
+              Commander
+            </button>
+          </form>
+          <!--
+          <div class="w-1/2 flex flex-col gap-4 my-8 hidden">
+            <span>Vous n'avez pas de compte, veuillez creer un compte</span>
+            <a href="/register" class="p-4 bg-black text-white"
+              >Creer un compte</a
+            >
+          </div>
+        -->
+          <!--CHECKOUT RESUME-->
+          <div
+            class="w-full flex flex-col items-center justify-between lg:w-1/2 bg-firstColor mt-4 p-4"
+          >
+            <!--PRODUCT ITEMS-->
+            <div class="w-full flex flex-col gap-4">
+              <div class="flex items-center justify-between">
+                <!--LEFT-->
+                <div class="flex items-center gap-2">
+                  <div class="w-max">
+                    <img
+                      src="/im0.jpg"
+                      alt=""
+                      class="w-[70px] h-[70px] rounded-md -z-4"
+                    />
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="text-xs font-semibold"
+                      >COSTUME AFRICAIN SUPER</span
+                    >
+                    <span class="text-[#8080808e]">35.000 x 2</span>
+                  </div>
+                </div>
+                <!--RIGHT-->
+                <span class="text-xs font-semibold">70.000 FCFA</span>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <!--LEFT-->
+                <div class="flex items-center gap-2">
+                  <div class="w-max">
+                    <img
+                      src="/im11.jpg"
+                      alt=""
+                      class="w-[70px] h-[70px] rounded-md -z-10"
+                    />
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="text-xs font-semibold"
+                      >COSTUME AFRICAIN SUPER</span
+                    >
+                    <span class="text-[#8080808e]">30.000 x 3</span>
+                  </div>
+                </div>
+                <!--RIGHT-->
+                <span class="text-xs font-semibold">90.000 FCFA</span>
+              </div>
+            </div>
+            <!--TOTAL-->
+            <div class="w-full flex items-center justify-between">
+              <span class="text-lg font-semibold">Total</span>
+              <span class="text-lg font-bold">160.000 FCFA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      -FOOTER PART
+    -->
+    <footer class="bg-[#f5f5f5] py-8">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap justify-between">
+          <div
+            class="w-full flex flex-col md:items-center gap-5 md:w-1/3 mb-6 md:mb-0"
+          >
+            <h3 class="text-xl font-semibold mb-4">Contactez-Nous</h3>
+            <p class="">HLM Grand Yoff, Dakar, Senegal</p>
+            <p class="">Email: info@example.com</p>
+            <p class="">Telephone: +221 77 000 00 00</p>
+          </div>
+          <div
+            class="w-full flex flex-col md:items-center gap-5 md:w-1/3 mb-6 md:mb-0"
+          >
+            <h3 class="text-xl font-semibold mb-4">Liens rapides</h3>
+            <ul>
+              <li class="mb-2">
+                <a href="#" class="hover:text-slate-500">Accueil</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="hover:text-slate-500">Boutique</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="hover:text-slate-500">Apropos</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-slate-500">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="w-full flex flex-col md:items-center gap-5 md:w-1/3">
+            <h3 class="text-xl font-semibold mb-4">Suivez Nous</h3>
+            <div class="flex flex-col gap-4">
+              <a href="#" class="hover:text-slate-500 flex items-center gap-3"
+                ><i class="fab fa-facebook-f"></i>
+                <span>Facebook</span>
+              </a>
+              <a href="#" class="hover:text-slate-500 flex items-center gap-3"
+                ><i class="fab fa-twitter"></i>
+                <span>Twitter</span>
+              </a>
+              <a href="#" class="hover:text-slate-500 flex items-center gap-3"
+                ><i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+              </a>
+              <a href="#" class="hover:text-slate-500 flex items-center gap-3"
+                ><i class="fab fa-linkedin-in"></i>
+                <span>Linkedin</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8 text-center">
+          <p class="text-spanish-gray">
+            &copy; 2024 AlAmin Design. Tout Droit Reserve.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/script.js"></script>
+
+    <!--
+    - ionicon link
+  -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

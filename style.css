@@ -79,3 +79,11 @@
 .product_bottom .review h1 {
   font-weight: 500;
 }
+
+.payment-option input:checked + img {
+  border-color: black;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
